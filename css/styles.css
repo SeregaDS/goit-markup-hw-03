@@ -31,7 +31,7 @@
 }
 
 body {
-  font-family: roboto, raleway, sans-serif;
+  font-family: roboto, sans-serif;
   background-color: #ffffff;
   color: var(--main-text-color);
   letter-spacing: 0.03em;
@@ -77,11 +77,13 @@ body {
 .footer-adress-list-item-contact {
   color: var(--footer-adress-color);
   text-decoration: none;
+  font-style: normal;
 }
 
 .footer-adress-list-item-adress {
   color: var(--text-white-color);
   text-decoration: none;
+  font-style: normal;
 }
 
 .footer-adress a:focus,
@@ -183,11 +185,13 @@ body {
 .privelege-list-item {
   font-size: 14px;
   line-height: 1.14;
+  text-transform: uppercase;
 }
 
 .buttons-filter:focus,
 .buttons-filter:hover {
   background-color: var(--action-color);
+  color: var(--text-white-color);
 }
 
 /* !убрать все точки со списков */
