@@ -57,6 +57,10 @@ body {
   text-decoration: none;
 }
 
+.nav .current {
+  color: var(--action-color);
+}
+
 .nav .link:hover,
 .nav .link:focus,
 .contact .link:hover,
