@@ -29,6 +29,9 @@
   --bgc-main: #ffffff;
   --bgc-secondary: #f5f4fa;
   --hero-button-hover: #188ce8;
+  --border: #ececec;
+  --bgc-item-hover: #eeeeee;
+  --typical-gap: 10px;
 }
 
 html {
@@ -64,6 +67,25 @@ body {
   letter-spacing: 0.03em;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  outline: 3px solid purple;
+}
+
 /* header */
 
 .nav .link {
@@ -73,6 +95,40 @@ body {
   letter-spacing: 0.02em;
   color: var(--main-text-color);
   text-decoration: none;
+
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: block;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 50px;
+  flex-wrap: nowrap;
+}
+
+.nav-item:last-child {
+  margin-right: 0px;
+}
+
+.contact {
+  display: flex;
+  margin-left: auto;
+}
+
+.contact-item {
+  margin-right: 50px;
+}
+
+.contact-item:last-child {
+  margin-right: 0px;
+}
+
+.header-border .logo {
+  margin-right: 93px;
 }
 
 .contact .link {
@@ -82,6 +138,10 @@ body {
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
   text-decoration: none;
+
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: block;
 }
 
 .nav .current {
@@ -95,6 +155,11 @@ body {
   color: var(--action-color);
 }
 
+.header-border {
+  border-bottom: var(--border) 1px solid;
+  display: flex;
+  align-items: center;
+}
 /* footer */
 
 .footer {
@@ -122,8 +187,6 @@ body {
   color: var(--action-color);
 }
 
-/* main */
-
 .logo {
   text-decoration: none;
   font-family: Raleway;
@@ -137,8 +200,21 @@ body {
   color: #000000;
 }
 
-.logo .footer-logo {
+.logo .footer-logo-white {
   color: var(--text-white-color);
+}
+
+.footer-logo {
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+
+.footer-adress-item {
+  padding-bottom: 9px;
+}
+
+.footer-adress-item:last-child {
+  padding-bottom: 60px;
 }
 
 .buttons-filter {
@@ -146,7 +222,25 @@ body {
   font-weight: 500;
   cursor: pointer;
   font-family: inherit;
+  text-align: center;
   background-color: var(--bgc-secondary);
+  padding: 6px 22px;
+  border-width: 0;
+  border-radius: 4px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.btn-filter {
+  margin-left: 8px;
+}
+
+.btn-filter:first-child {
+  margin-left: 0px;
 }
 
 .cases h2 {
@@ -154,20 +248,48 @@ body {
   font-weight: 700;
   line-height: 2;
   letter-spacing: 0.06em;
+  padding-top: 20px;
+  padding-left: 24px;
 }
 
 .cases p {
   font-size: 16px;
   color: var(--secondary-text-color);
+  padding-top: 4px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+}
+
+.cases-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+}
+
+.cases-item {
+  flex-basis: calc(100% / 3 - 30px);
+
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.cases-content {
+  border: 1px solid var(--bgc-item-hover);
+}
+
+.cases-item:hover,
+.cases-item:focus {
+  cursor: pointer;
+  border: 1px solid var(--bgc-item-hover);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .hero {
   /* добавлено, поскольку белый шрифт заголовка героя */
   background-color: #2f303a;
-  width: 1600px;
-  height: 600px;
-  display: inline-block;
-  outline: red solid 3px;
+  /* background-image: url('../images/hero-bg.jpg'); */
 }
 
 .hero-title {
@@ -178,9 +300,13 @@ body {
   letter-spacing: 0.06em;
   text-align: center;
   text-transform: uppercase;
+  display: block;
+  padding-top: 106px;
   margin-bottom: 30px;
-  margin-top: 200px;
-  /* outline: red solid 3px; */
+}
+
+.btn {
+  padding-bottom: 106px;
 }
 
 .hero-button {
@@ -192,9 +318,13 @@ body {
   font-family: inherit;
   font-weight: 700;
   color: var(--text-white-color);
-  /* ради интереса выровнял кнопку */
   margin: 0 auto;
   display: block;
+  width: 200px;
+  height: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-width: 0;
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -204,18 +334,55 @@ body {
 .section-title {
   font-size: 36px;
   line-height: 1.17;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
+.team {
+  background-color: var(--bgc-secondary);
+}
 .team-list-item h3 {
   line-height: 1.19;
   font-size: 16px;
   font-weight: 500;
+  text-align: center;
+  padding-top: 30px;
 }
 
 .team-list-item p {
   line-height: 1.19;
   font-size: 16px;
   color: var(--secondary-text-color);
+  text-align: center;
+  padding-top: var(--typical-gap);
+  padding-bottom: 30px;
+}
+
+.team-list {
+  display: flex;
+  margin-left: -30px;
+}
+
+.team-list-item {
+  flex-basis: calc(100% / 4 - 30px);
+  margin-left: 30px;
+  background-color: var(--text-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.privelege-list {
+  display: flex;
+}
+
+.privelege-item {
+  margin-right: 30px;
+}
+
+.privelege-item:last-child {
+  margin-right: 0;
 }
 
 .privelege-list p {
@@ -228,6 +395,39 @@ body {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: var(--typical-gap);
+}
+
+/* promo */
+
+.main .promo {
+  padding-top: 0;
+}
+
+.promo-list {
+  display: flex;
+}
+
+.promo-list-item {
+  margin-right: 30px;
+}
+
+.promo-list-item:last-child {
+  margin-right: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
 .buttons-filter:focus,
