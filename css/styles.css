@@ -50,14 +50,18 @@ h3,
 h4,
 h5,
 h6,
-p,
-ul {
+p {
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 body {
@@ -105,13 +109,8 @@ img {
   display: flex;
 }
 
-.nav-item {
+.nav-item:not(:last-child) {
   margin-right: 50px;
-  flex-wrap: nowrap;
-}
-
-.nav-item:last-child {
-  margin-right: 0px;
 }
 
 .contact {
@@ -119,12 +118,8 @@ img {
   margin-left: auto;
 }
 
-.contact-item {
+.contact-item:not(:last-child) {
   margin-right: 50px;
-}
-
-.contact-item:last-child {
-  margin-right: 0px;
 }
 
 .header-border .logo {
@@ -155,8 +150,11 @@ img {
   color: var(--action-color);
 }
 
-.header-border {
+.header {
   border-bottom: var(--border) 1px solid;
+}
+
+.header-border {
   display: flex;
   align-items: center;
 }
@@ -165,6 +163,8 @@ img {
 .footer {
   /* добавлено для корректного отображения цвета шрифта телефона и мейла в футере */
   background-color: #2f303a;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 .footer-adress {
   font-size: 14px;
@@ -205,16 +205,11 @@ img {
 }
 
 .footer-logo {
-  padding-top: 60px;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-.footer-adress-item {
-  padding-bottom: 9px;
-}
-
-.footer-adress-item:last-child {
-  padding-bottom: 60px;
+.footer-adress-item:not(:last-child) {
+  margin-bottom: 9px;
 }
 
 .buttons-filter {
@@ -243,21 +238,16 @@ img {
   margin-left: 0px;
 }
 
-.cases h2 {
+.cases-item-title {
   font-size: 18px;
   font-weight: 700;
   line-height: 2;
   letter-spacing: 0.06em;
-  padding-top: 20px;
-  padding-left: 24px;
 }
 
-.cases p {
+.cases-item-text {
   font-size: 16px;
   color: var(--secondary-text-color);
-  padding-top: 4px;
-  padding-bottom: 20px;
-  padding-left: 24px;
 }
 
 .cases-list {
@@ -275,22 +265,22 @@ img {
 }
 
 .cases-content {
-  border: 1px solid var(--bgc-item-hover);
-}
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
 
-.cases-item:hover,
-.cases-item:focus {
-  cursor: pointer;
-  border: 1px solid var(--bgc-item-hover);
-  box-sizing: border-box;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  border-bottom: 1px solid var(--bgc-item-hover);
+  border-left: 1px solid var(--bgc-item-hover);
+  border-right: 1px solid var(--bgc-item-hover);
 }
 
 .hero {
   /* добавлено, поскольку белый шрифт заголовка героя */
   background-color: #2f303a;
   /* background-image: url('../images/hero-bg.jpg'); */
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .hero-title {
@@ -302,12 +292,7 @@ img {
   text-align: center;
   text-transform: uppercase;
   display: block;
-  padding-top: 106px;
   margin-bottom: 30px;
-}
-
-.btn {
-  padding-bottom: 106px;
 }
 
 .hero-button {
@@ -343,20 +328,23 @@ img {
 .team {
   background-color: var(--bgc-secondary);
 }
-.team-list-item h3 {
+.team-list-item-title {
   line-height: 1.19;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
-  padding-top: 30px;
 }
 
-.team-list-item p {
+.team-list-item-text {
   line-height: 1.19;
   font-size: 16px;
   color: var(--secondary-text-color);
   text-align: center;
-  padding-top: var(--typical-gap);
+  margin-top: var(--typical-gap);
+}
+
+.team-list-item-container {
+  padding-top: 30px;
   padding-bottom: 30px;
 }
 
@@ -410,12 +398,8 @@ img {
   display: flex;
 }
 
-.promo-list-item {
+.promo-list-item:not(:last-child) {
   margin-right: 30px;
-}
-
-.promo-list-item:last-child {
-  margin-right: 0;
 }
 
 .visually-hidden {
@@ -435,17 +419,4 @@ img {
 .buttons-filter:hover {
   background-color: var(--action-color);
   color: var(--text-white-color);
-}
-
-/* !убрать все точки со списков */
-
-.nav,
-.contact,
-.privelege-list,
-.promo-list,
-.team-list,
-.buttons,
-.cases-list,
-.footer-adress-list {
-  list-style: none;
 }
