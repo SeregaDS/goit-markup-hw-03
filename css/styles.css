@@ -62,6 +62,7 @@ p {
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 body {
@@ -168,6 +169,7 @@ img {
 }
 .footer-adress {
   font-size: 14px;
+  line-height: 1.46;
 }
 
 .footer-adress-list-item-contact {
@@ -230,12 +232,8 @@ img {
   margin-bottom: 50px;
 }
 
-.btn-filter {
+.btn-filter:not(:first-child) {
   margin-left: 8px;
-}
-
-.btn-filter:first-child {
-  margin-left: 0px;
 }
 
 .cases-item-title {
@@ -366,15 +364,11 @@ img {
   display: flex;
 }
 
-.privelege-item {
+.privelege-item:not(:last-child) {
   margin-right: 30px;
 }
 
-.privelege-item:last-child {
-  margin-right: 0;
-}
-
-.privelege-list p {
+.privelege-list-text {
   color: var(--secondary-text-color);
   font-size: 14px;
   line-height: 1.71;
